@@ -1,5 +1,6 @@
 name: CI PIPELINE
 on: [push, pull_request]
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,5 +11,6 @@ jobs:
         with:
           dotnet-version: 9.0.x
 
-      - run: dotnet restore
-      - run: dotnet build --no-restore
+      - run: dotnet restore MyWebApp.csproj
+      - run: dotnet build MyWebApp.csproj --no-restore
+      - run: dotnet test tests/MyWebApp.Tests/MyWebApp.Tests.csproj
