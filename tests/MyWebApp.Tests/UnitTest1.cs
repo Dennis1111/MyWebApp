@@ -7,6 +7,6 @@ public class GreetingServiceTests
     {
         var result = GreetingService.GetGreeting("World");
 
-        Assert.Equal("Hello World!", result);
+        Assert.Equal("!!Hello World!", result);
     }
 }
